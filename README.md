@@ -1,4 +1,4 @@
-<h1 align="center">🛡️ AeroSafe: Forensic Aviation Risk Intelligence (1908–2025)</h1>
+<h1 align="center">Airplane Crash Data Analysis Since 1908</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Dataset-Airplane_Crashes_117Y-red?style=for-the-badge&logo=aircanada" />
