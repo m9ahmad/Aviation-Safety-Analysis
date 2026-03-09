@@ -1,5 +1,4 @@
-# Aviation-Safety-Analysis
-<h1 align="center">🛡️ AeroSafe: Global Aviation Risk & NLP Intelligence</h1>
+<h1 align="center"> Airplane Crash Data Analysis Since 1908 </h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/History-117_Years_of_Data-red?style=for-the-badge&logo=target" />
@@ -34,23 +33,4 @@ This project performs an industrial-grade audit of airplane crash data to uncove
 | **Data Engineering** | ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white) |
 | **Visualization** | ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white) `Seaborn`, `Matplotlib` |
 
-## 📈 Advanced Analysis Modules
-
-### 1. The Survivability Index 🧬
-We engineered a specialized metric to measure "Crashworthiness" across different aviation eras:
-$$Survival\_Rate = \frac{Aboard - Fatalities}{Aboard}$$
-
-### 2. "The Why" — NLP Text Mining 🧠
-Using Trigram extraction to find recurring fatal patterns in the `Summary` column:
-* **Primary Causal Factor:** "Adverse weather conditions"
-* **Secondary Causal Factor:** "Engine failure / Emergency landing"
-
-### 3. Operator "Incident Signatures" 🌡️
-A competitive intelligence heatmap identifying which operators have specific recurring failure modes (e.g., Aeroflot's historically high frequency in landing incidents).
-
-### 4. Crew vs. Passenger Protection ⚖️
-An interactive **Plotly** diagnostic mapping the delta between crew and passenger fatality rates. Deviations from the $1:1$ diagonal line highlight aircraft types with specific structural safety vulnerabilities.
-
 ---
-
-          # Project Documentation
