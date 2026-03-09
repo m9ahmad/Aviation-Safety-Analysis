@@ -1,54 +1,79 @@
-# Airplane Crash Data Analysis Since 1908
+<h1 align="center">🛡️ AeroSafe: Forensic Aviation Risk Intelligence (1908–2025)</h1>
 
-> Add blockquote
+<p align="center">
+  <img src="https://img.shields.io/badge/Dataset-Airplane_Crashes_117Y-red?style=for-the-badge&logo=aircanada" />
+  <img src="https://img.shields.io/badge/NLP-Trigram_Extraction-green?style=for-the-badge&logo=pypy" />
+  <img src="https://img.shields.io/badge/Viz-Interactive_Plotly-orange?style=for-the-badge&logo=plotly" />
+  <img src="https://img.shields.io/badge/Metrics-Survival_Index-blue?style=for-the-badge&logo=dataiku" />
+</p>
+
+<p align="center">
+  <strong>An Exploratory Data Analysis (EDA) and Predictive Risk Audit of global aviation incidents.</strong><br />
+  Quantifying "The Safety Paradox," Operator Fragility, and NLP-driven Causal Discovery.
+</p>
+
+---
+
+## 📖 Project Overview
+This project performs an industrial-grade audit of aviation safety data to uncover hidden risks, patterns, and survival trends across over a century of flight records. By implementing **NLP-based feature extraction** and **survivability modeling**, this study provides a forensic view of how aviation risk has evolved from mechanical failures to systemic mass-fatality events.
+
+---
+
+## 🛠️ Tech Stack & Methodology
+
+| Category | Tools & Libraries |
+| :--- | :--- |
+| **Data Engine** | `Pandas`, `NumPy` |
+| **NLP Pipeline** | `NLTK`, `Scikit-Learn` (CountVectorizer) |
+| **Visualization** | `Plotly` (Interactive), `Seaborn`, `Matplotlib` |
+| **Environment** | `Google Colab` |
+
+---
+
+## 🔍 Key Technical Analyses & Findings
+
+### 1. 🧬 The Survivability Index
+Transitioned from raw counts to a normalized **Survival Rate** metric to evaluate crashworthiness across aircraft generations.
+> $$Survival\_Rate = \frac{Aboard - Fatalities}{Aboard}$$
+
+### 2. ⚖️ Crew vs. Passenger Risk Delta
+* **Analysis**: Comparative fatality analysis between crew and passengers.
+* **Finding**: Identified specific aircraft types (e.g., **Hawker Siddeley HS-125**) with statistical discrepancies, indicating higher crew vulnerability compared to passengers.
+
+### 3. 📉 The Safety Paradox (2019 Case Study)
+* **Hypothesis**: Are accidents rarer but deadlier?
+* **Finding**: In 2019, while only 9 accidents occurred, **66% were Mass Fatality events** (including the Boeing 737 Max 8). This validates the paradox: modern aviation is safer in frequency, but higher in potential casualty volume.
+
+### 4. 🧠 NLP: "The Why" Causal Mining
+* **Extraction**: Top trigrams from accident summaries.
+* **Finding**: Predominant causal themes identified: *"Poor weather conditions"*, *"Adverse weather conditions"*, and *"Cargo plane crashed"*.
+
+### 5. 🏙️ Ground Zero & Third-Party Risk
+* **Analysis**: Fatalities affecting individuals not aboard the aircraft.
+* **Finding**: 242 incidents resulted in **8,513 ground fatalities**. The 9/11 attacks remain the most significant outlier in urban third-party risk.
+
+### 6. 📅 Decadal Fatality-to-Aboard Trends
+* **Trend**: High fatality rates in early aviation saw a steady decline through the mid-20th century (lowest in 1980s-90s).
+* **Finding**: A recent slight uptick in the 2000s-2010s reflects the impact of high-capacity aircraft in mass-casualty events.
+
+### 7. 🌡️ Operator Risk Signatures (Heatmap)
+* **Competitive Intelligence**: Analyzed top 20 operators for failure types (Engine, Weather, Pilot, Landing).
+* **Finding**: **Aeroflot** exhibited the highest cumulative frequency across all analyzed incident categories compared to global peers.
+
+### 8. 🚁 High-Risk Airframe Identification
+* **Analysis**: Calculating Mean Fatality Rate for AC Types with $>10$ incidents.
+* **Finding**: Older/Specialized types like the **De Havilland DH-4** and **Mil Mi-8** helicopter exhibited the lowest historical survivability rates.
+
+### 9. 📍 Interactive Vulnerability Diagnostics
+* **Interactive Scatter Plot**: A Plotly-driven diagnostic mapping Crew vs. Passenger fatality rates.
+* **Utility**: Highlighting aircraft where the risk profile deviates from the $1:1$ diagonal line, exposing role-specific design or operational vulnerabilities.
 
 
+<p align="center">
+<strong>Developed by Mahad Ahmad</strong><br />
+<em>AI Software Engineer | Aviation Risk Analyst</em><br />
 
-## Project Overview
-This project performs an exploratory data analysis (EDA) on airplane crash data since 1908 to uncover patterns, risks, and trends over time. The analysis covers various aspects, including survivability rates, common causes of accidents, operator performance, and third-party risks.
 
-## Data Source
-The dataset used for this analysis is `Airplane_Crashes_and_Fatalities_Since_1908_20190820105639.csv`, downloaded from KaggleHub. It contains detailed records of aviation incidents, including date, location, operator, aircraft type, and fatality counts.
-
-## Key Analyses and Findings
-
-### 1. Data Loading and Initial Inspection
-- The raw CSV data was loaded into a pandas DataFrame.
-- Initial inspection revealed columns such as 'Date', 'Time', 'Location', 'Operator', 'AC Type', 'Fatalities', and 'Aboard'.
-
-### 2. Survivability Rate Calculation
-- A new column, `Survival_Rate`, was calculated as `(Aboard - Fatalities) / Aboard` to provide a more insightful metric than raw counts.
-
-### 3. Crew vs. Passenger Risk Analysis
-- Analyzed average 'Fatalities Crew' and 'Fatalities Passangers' by 'AC Type' to determine relative risks.
-- **Finding**: Certain AC Types showed discrepancies, with some exhibiting higher crew fatality rates compared to passenger fatality rates (e.g., Hawker Siddeley HS-125).
-
-### 4. Temporal Risk: Accidents in 2019 ('The Safety Paradox')
-- 'Year' and 'Month' were extracted from the 'Date' column.
-- Analysis focused on 2019 to investigate if accidents are decreasing in frequency but increasing in 'Mass Fatality' potential.
-- **Finding**: While the total number of accidents in 2019 was relatively low (9 incidents), a significant proportion (6 out of 9) were mass fatality events (>=10 fatalities), notably including the Boeing 737 Max 8 crash, supporting the 'Mass Fatality' potential aspect of 'The Safety Paradox'.
-
-### 5. Keyword Extraction from Summaries ('The Why')
-- Top trigrams (3-word phrases) were extracted from the 'Summary' column using `CountVectorizer` and NLTK stopwords.
-- **Finding**: Common themes identified included 'cargo plane crashed', 'poor weather conditions', 'adverse weather conditions', and 'make emergency landing', indicating prevalent causes and scenarios.
-
-### 6. Third-Party Risk (Ground Fatalities)
-- Incidents causing fatalities to people not on the plane (`Ground` column) were analyzed.
-- **Finding**: 242 incidents resulted in ground fatalities, totaling 8513. The highest ground fatalities were tragically linked to the 9/11 attacks in New York City and Arlington, highlighting severe third-party risks in urban areas.
-
-### 7. Decadal Trends in Fatalities-to-Aboard Ratio
-- A 'Decade' column was created, and the 'Fatalities-to-Aboard Ratio' was calculated for each decade.
-- **Finding**: The ratio showed high fatality rates in early aviation, a gradual decline through the mid-20th century (lowest in the 1980s-1990s), and a slight increase in the 2000s-2010s, reflecting improvements but also the impact of high-casualty events in recent times.
-
-### 8. Operator vs. Incident Type Heatmap ('Competitive Intelligence')
-- Top 20 operators were identified, and their incident summaries were analyzed for keywords like 'Engine', 'Weather', 'Pilot', and 'Landing/Takeoff'.
-- A heatmap was generated to visualize the frequency of these incident types per operator.
-- **Finding**: Aeroflot showed notably higher frequencies across all analyzed incident types (Engine, Weather, Pilot, Landing) compared to other top operators, providing insights into operator-specific risk profiles.
-
-### 9. Aircraft Types with Lowest Survivability Rates
-- Mean `Fatalities / Aboard` (Fatality Rate Per Incident) was calculated for AC Types with more than 10 incidents.
-- **Finding**: Several older or specialized aircraft types (e.g., De Havilland DH-4, Breguet 14, various Curtiss and Douglas variants, Mil Mi-8 helicopter) exhibited very high average fatality rates, suggesting inherent risks or challenging operational contexts.
-
-### 10. Crew vs. Passenger Fatality Rate Scatter Plot
-- An interactive Plotly scatter plot was created to compare `Crew_Fatality_Rate` against `Passenger_Fatality_Rate` by AC Type.
-- **Finding**: The plot visually highlights aircraft types where one group (crew or passengers) is statistically more protected or at higher risk than the other, deviating from the 1:1 diagonal line. This can indicate specific vulnerabilities or design considerations related to survivability for different roles aboard an aircraft.
+---
+             # Heatmaps, Decadal Graphs, Scatter Plots
+└── README.md               # Documentation
